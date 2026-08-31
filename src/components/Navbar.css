@@ -1,0 +1,751 @@
+/* =========================================================
+   MATTRESSWALA PREMIUM NAVBAR
+   Deep Sage Green + Teal + Warm Cream
+========================================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 100;
+
+  height: 84px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+
+  /* Premium deep sage background */
+  background:
+    radial-gradient(
+      circle at 10% 50%,
+      rgba(78, 177, 168, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #163a37 0%,
+      #1d4844 48%,
+      #173b38 100%
+    );
+
+  border-bottom: 1px solid rgba(105, 211, 201, 0.30);
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.18);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    height 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   SCROLLED NAVBAR
+========================================================= */
+
+.navbar--scrolled {
+  height: 72px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(22, 58, 55, 0.98),
+      rgba(29, 72, 68, 0.98)
+    );
+
+  border-bottom: 1px solid rgba(105, 211, 201, 0.40);
+
+  box-shadow:
+    0 10px 32px rgba(0, 0, 0, 0.24);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   NAVBAR ROW
+========================================================= */
+
+.navbar__row {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   MATTRESSWALA LOGO
+========================================================= */
+
+.navbar__logo {
+  height: 95px;
+  width: auto;
+  max-width: 290px;
+  .navbar__brand {
+  margin-left: 700px;
+}
+
+  display: block;
+
+  object-fit: contain;
+
+  opacity: 1;
+
+  /*
+    Logo પાછળ white હોય તો background સાથે
+    visually blend કરવાનો પ્રયાસ.
+  */
+  mix-blend-mode: screen;
+
+  transition:
+    height 0.3s ease,
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+.navbar__logo:hover {
+  transform: translateY(-1px);
+
+  filter:
+    brightness(1.08)
+    saturate(1.12);
+}
+
+.navbar--scrolled .navbar__logo {
+  height: 56px;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.navbar__links {
+
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: clamp(20px, 2.5vw, 38px);
+
+  margin: 0;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.90rem;
+
+  font-weight: 600;
+}
+
+
+/* Individual links */
+
+.navbar__links a {
+
+  position: relative;
+
+  display: inline-block;
+
+  padding: 9px 2px;
+
+  color: #f4f1e8;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* Hover */
+
+.navbar__links a:hover {
+
+  color: #79d5cc;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   ✦ PREMIUM NAVBAR INDICATOR
+   Desktop + Mobile
+========================================================= */
+
+.navbar__links a {
+  position: relative;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   MAIN LASER LINE
+========================================================= */
+
+.navbar__links a::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(121, 213, 204, 0.2),
+    #79d5cc,
+    rgba(121, 213, 204, 0.2),
+    transparent
+  );
+
+  border-radius: 50%;
+
+  transform: translateX(-50%) scaleX(0);
+
+  opacity: 0;
+
+  box-shadow:
+    0 0 5px rgba(121, 213, 204, 0.5),
+    0 0 12px rgba(121, 213, 204, 0.25);
+
+  transition:
+    width 0.45s cubic-bezier(.22, 1, .36, 1),
+    transform 0.45s cubic-bezier(.22, 1, .36, 1),
+    opacity 0.25s ease;
+}
+
+
+/* =========================================================
+   ✦ CENTER DIAMOND
+========================================================= */
+
+.navbar__links a::before {
+  content: "✦";
+
+  position: absolute;
+  left: 50%;
+  bottom: -13px;
+
+  font-size: 8px;
+  line-height: 1;
+
+  color: #8be0d7;
+
+  transform:
+    translateX(-50%)
+    scale(0)
+    rotate(-45deg);
+
+  opacity: 0;
+
+  text-shadow:
+    0 0 5px #79d5cc,
+    0 0 10px rgba(121, 213, 204, 0.7);
+
+  transition:
+    transform 0.35s cubic-bezier(.34, 1.56, .64, 1),
+    opacity 0.25s ease;
+}
+
+
+/* =========================================================
+   💻 DESKTOP HOVER
+========================================================= */
+
+.navbar__links a:hover::after {
+  width: 75%;
+
+  opacity: 1;
+
+  transform: translateX(-50%) scaleX(1);
+
+  animation: navbarLaser 1.2s ease-in-out infinite;
+}
+
+.navbar__links a:hover::before {
+  opacity: 1;
+
+  transform:
+    translateX(-50%)
+    scale(1)
+    rotate(0deg);
+}
+
+
+/* =========================================================
+   📱 MOBILE / TOUCH
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .navbar__links a:active::after,
+  .navbar__links a:focus::after {
+    width: 65%;
+
+    opacity: 1;
+
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  .navbar__links a:active::before,
+  .navbar__links a:focus::before {
+    opacity: 1;
+
+    transform:
+      translateX(-50%)
+      scale(1)
+      rotate(0deg);
+  }
+
+}
+
+
+/* =========================================================
+   ✨ SOFT LASER ANIMATION
+========================================================= */
+
+@keyframes navbarLaser {
+
+  0% {
+    filter: brightness(0.85);
+  }
+
+  50% {
+    filter: brightness(1.6);
+  }
+
+  100% {
+    filter: brightness(0.85);
+  }
+
+}
+/* =========================================================
+   ⭐ CALL US BUTTON — START
+   અહીંથી Call Us button નું design શરૂ થાય છે
+========================================================= */
+
+.navbar__cta {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Button size */
+  height: 36px;
+  min-width: 92px;
+  padding: 0 15px;
+
+  /* Border */
+  border: 1px solid rgba(121, 213, 204, 0.45);
+  border-radius: 4px;
+
+  /* Light background — Navbar સાથે match */
+  background: rgba(121, 213, 204, 0.09);
+
+  /* Text */
+  color: #dff5f2 !important;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  /* Smooth hover */
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* ⭐ CALL US BUTTON — HOVER */
+
+.navbar__cta:hover {
+  background: rgba(121, 213, 204, 0.17);
+  border-color: rgba(121, 213, 204, 0.70);
+  color: #ffffff !important;
+}
+
+
+/* ⭐ CALL US BUTTON — CLICK */
+
+.navbar__cta:active {
+  transform: translateY(1px);
+}
+
+
+/* ⭐ CALL US BUTTON — WHEN NAVBAR SCROLLS */
+
+.navbar--scrolled .navbar__cta {
+  height: 34px;
+  min-width: 88px;
+  padding: 0 14px;
+  font-size: 0.80rem;
+}
+
+/* =========================================================
+   MOBILE BURGER
+========================================================= */
+
+.navbar__burger {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  margin-left: auto;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.navbar__burger span {
+  width: 23px;
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: #79d5cc;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    background 0.25s ease;
+}
+
+.navbar__burger:hover span {
+  background: #a1e8e1;
+}
+
+
+/* Burger open */
+
+.navbar__burger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__burger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.navbar__mobile {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+
+  width: min(82vw, 350px);
+  height: 100vh;
+
+  padding: 6rem 2rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.3rem;
+
+  background:
+    linear-gradient(
+      160deg,
+      #173b38,
+      #214e49
+    );
+
+  border-left: 1px solid rgba(105, 211, 201, 0.25);
+
+  transform: translateX(100%);
+
+  transition:
+    transform 0.35s ease;
+
+  font-family: var(--font-mono);
+
+  font-size: 1.05rem;
+
+  box-shadow: none;
+}
+
+.navbar__mobile.is-open {
+  transform: translateX(0);
+
+  box-shadow:
+    -25px 0 60px rgba(0, 0, 0, 0.28);
+}
+
+
+/* Mobile links */
+
+.navbar__mobile a {
+  padding: 0.7rem 0;
+
+  color: #f4f1e8;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(105, 211, 201, 0.20);
+
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.navbar__mobile a:hover {
+  color: #79d5cc;
+
+  padding-left: 6px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .navbar__links {
+    gap: 17px;
+
+    font-size: 0.82rem;
+  }
+
+ .navbar__logo {
+  height: 58px;
+  max-width: 205px;
+}
+  }
+
+  .navbar__cta a,
+  .navbar__cta button {
+    min-width: 120px;
+
+    height: 46px;
+
+    padding: 0 22px;
+  }
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 880px) {
+
+  .navbar {
+    height: 76px;
+  }
+
+  .navbar--scrolled {
+    height: 68px;
+  }
+
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__cta {
+    display: none;
+  }
+
+  .navbar__burger {
+    display: flex;
+  }
+
+ .navbar__logo {
+  height: 55px;
+  max-width: 195px;
+}
+
+  .navbar--scrolled .navbar__logo {
+  height: 50px;
+}
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar__logo {
+  height: 49px;
+  max-width: 175px;
+}
+
+  .navbar__row {
+    gap: 10px;
+  }
+
+  .navbar__mobile {
+    width: min(88vw, 340px);
+  }
+}
+/* =========================================================
+   ⭐ ACTIVE NAVIGATION
+   Scroll કરતાં જે section active હોય તેની નીચે line
+   Desktop + Mobile
+========================================================= */
+
+
+/* =========================================================
+   💻 DESKTOP ACTIVE LINK
+========================================================= */
+
+.navbar__links a.active {
+  color: #79d5cc;
+}
+
+
+/* Active laser line */
+
+.navbar__links a.active::after {
+  width: 75%;
+
+  opacity: 1;
+
+  transform: translateX(-50%) scaleX(1);
+
+  animation: navbarLaserActive 1.8s ease-in-out infinite;
+}
+
+
+/* Active diamond */
+
+.navbar__links a.active::before {
+  opacity: 1;
+
+  transform:
+    translateX(-50%)
+    scale(1)
+    rotate(0deg);
+}
+
+
+/* =========================================================
+   ✨ ACTIVE LINE ANIMATION
+========================================================= */
+
+@keyframes navbarLaserActive {
+
+  0% {
+    filter: brightness(0.9);
+    opacity: 0.75;
+  }
+
+  50% {
+    filter: brightness(1.5);
+    opacity: 1;
+  }
+
+  100% {
+    filter: brightness(0.9);
+    opacity: 0.75;
+  }
+
+}
+
+
+/* =========================================================
+   📱 MOBILE ACTIVE LINK
+========================================================= */
+
+.navbar__mobile a.active {
+  color: #79d5cc;
+
+  padding-left: 8px;
+
+  border-bottom-color: rgba(121, 213, 204, 0.65);
+
+  position: relative;
+}
+
+
+/* Small active indicator */
+
+.navbar__mobile a.active::before {
+  content: "✦";
+
+  position: absolute;
+
+  left: -2px;
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    scale(1);
+
+  color: #79d5cc;
+
+  font-size: 10px;
+
+  text-shadow:
+    0 0 6px rgba(121, 213, 204, 0.8),
+    0 0 12px rgba(121, 213, 204, 0.4);
+}
+
+
+/* =========================================================
+   📱 MOBILE ACTIVE HOVER
+========================================================= */
+
+.navbar__mobile a.active:hover {
+  padding-left: 8px;
+  color: #8be0d7;
+}
+
+
+/* =========================================================
+   ♿ REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar__links a.active::after {
+    animation: none;
+  }
+
+}

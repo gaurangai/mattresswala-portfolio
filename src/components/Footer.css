@@ -1,0 +1,182 @@
+.footer {
+  background: var(--ink);
+  color: rgba(250, 246, 239, 0.75);
+  padding: var(--space-xl) 0 var(--space-md);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+/* =========================================================
+   FOOTER LOGO — PREMIUM MOVING LIGHT
+========================================================= */
+
+.footer__logo {
+  height: 58px;
+  width: auto;
+  max-width: 220px;
+
+  object-fit: contain;
+  display: block;
+  margin-bottom: 1.2rem;
+
+  position: relative;
+
+  /* Premium soft glow */
+  filter:
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.20))
+    drop-shadow(0 5px 12px rgba(0, 0, 0, 0.30));
+
+  /* Smooth hover */
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.45s ease;
+
+  /* Very subtle floating animation */
+  animation: footerLogoFloat 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   FLOATING ANIMATION
+========================================================= */
+
+@keyframes footerLogoFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+
+}
+
+
+/* =========================================================
+   HOVER — PREMIUM GLOW
+========================================================= */
+
+.footer__logo:hover {
+
+  transform: translateY(-5px) scale(1.06);
+
+  filter:
+    drop-shadow(0 0 7px rgba(255, 255, 255, 0.35))
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.18))
+    drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
+
+}
+/* =========================================================
+   UNIQUE STAR SPARK EFFECT
+========================================================= */
+
+.footer__logo-wrap {
+  position: relative;
+  width: fit-content;
+  display: inline-block;
+}
+
+.logo-star {
+  position: absolute;
+  z-index: 5;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  pointer-events: none;
+
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 12px rgba(255, 255, 255, 0.4);
+
+  animation: starTwinkle 2.8s ease-in-out infinite;
+}
+
+.star-one {
+  top: -9px;
+  right: -9px;
+  font-size: 13px;
+}
+
+.star-two {
+  bottom: 4px;
+  left: -10px;
+  font-size: 9px;
+
+  animation-delay: 0.8s;
+}
+
+.star-three {
+  top: 8px;
+  left: -8px;
+  font-size: 7px;
+
+  animation-delay: 1.5s;
+}
+
+
+/* =========================================================
+   STAR TWINKLE
+========================================================= */
+
+@keyframes starTwinkle {
+
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.6) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25) rotate(20deg);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+  .footer__logo {
+    height: 52px;
+  }
+
+}
+.footer__brand p { font-size: 0.9rem; line-height: 1.7; max-width: 42ch; color: rgba(250,246,239,0.55); }
+
+.footer h4 {
+  color: var(--linen);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+
+.footer ul { display: flex; flex-direction: column; gap: 0.65rem; }
+.footer a { font-size: 0.92rem; transition: color var(--dur-fast) var(--ease); }
+.footer a:hover { color: var(--rust); }
+
+.footer__bottom {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(250,246,239,0.12);
+  font-size: 0.82rem;
+  color: rgba(250,246,239,0.45);
+}
+
+@media (max-width: 860px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .footer__grid { grid-template-columns: 1fr; }
+}
