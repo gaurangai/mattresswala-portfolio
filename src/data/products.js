@@ -2,9 +2,9 @@ import pillowHero from '../assets/images/pillow-hero.jpeg'
 import cushionsPair from '../assets/images/cushions-pair.jpeg'
 import bedsheetFloral from '../assets/images/bedsheet-floral.jpeg'
 import bedsheetRust from '../assets/images/bedsheet-rust.jpeg'
-import bedding from '../assets/images/bedding.jpeg'
-import bedding1 from '../assets/images/bedding1.jpeg'
-import mattress from '../assets/images/mattress.jpeg'
+import bedding from '../assets/images/Bedding.jpeg'
+import bedding1 from '../assets/images/Bedding1.jpeg'
+import mattress from '../assets/images/Mattress.jpeg'
 import chairPaid from '../assets/images/Chair Paid.jpeg'
 
 
