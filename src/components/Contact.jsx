@@ -44,19 +44,18 @@ export default function Contact() {
             {company.phone}
           </a>
 
-          {/* Location */}
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Shyam+Fibers+798+Opp+Radhaswami+Satsang+Beas+Near+Utsav+Food+Products+Pij+Road+Tundel+Nadiad+387230"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact__detail"
-          >
-            <span>Location</span>
-            Shyam Fibers, 798, Opp. Radhaswami Satsang Beas,
-            Near Utsav Food Products, Pij Road, Tundel,
-            Nadiad - 387230
-          </a>
-
+        {/* Location */}
+<a
+  href="https://maps.app.goo.gl/4JXt34h1hn6BhX8s5"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="contact__detail"
+>
+  <span>Location</span>
+  Shyam Fibers, 798, Opp. Radhaswami Satsang Beas,
+  Near Utsav Food Products, Pij Road, Tundel,
+  Nadiad - 387230
+</a>
         </div>
 
         <div className="contact__actions">
